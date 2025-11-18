@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal - Gestão de Estoque</title>
+    <link rel="stylesheet" href="style-main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e8b57;
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.menu-box {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.menu-box h2 {
+    color: #246d43;
+    margin-bottom: 35px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+   
+    text-decoration: none;
+    color: #333;
+    background-color: #f0fff0;
+   
+    padding: 30px 15px; 
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background-color: #e6ffe6;
+    border-color: #2e8b57; 
+}
+
+.menu-item .icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.menu-item h3 {
+    font-size: 19px;
+    margin: 5px 0 5px;
+    font-weight: 700;
+    color: #2e8b57;
+}
+
+.menu-item p {
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.view-btn h3 { color: #007bff; }
+.view-btn:hover { border-color: #007bff; }
+
+.add-btn h3 { color: #28a745; }
+.add-btn:hover { border-color: #28a745; }
+
+.entry-btn h3 { color: #17a2b8; }
+.entry-btn:hover { border-color: #17a2b8; }
+
+.remove-btn h3 { color: #ffc107; }
+.remove-btn:hover { border-color: #ffc107; }
+
+.alert-btn {
+    border: 2px solid #d9534f;
+    background-color: #fff0f0;
+}
+.alert-btn h3 { color: #d9534f; }
+.alert-btn:hover {
+    background-color: #ffe8e8;
+    transform: scale(1.05);
+}
+
+.logout-btn {
+    grid-column: span 3;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 15px;
+    margin-top: 10px;
+}
+.logout-btn h3 { color: #555; margin: 0; }
+.logout-btn p { display: none; }
+.logout-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-3px);
+    border-color: #555;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .logout-btn {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-box {
+        padding: 25px;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    .logout-btn {
+        grid-column: span 1;
+    }
+}
+
+.login-button {
+    width: 100%;
+    padding: 5px 0;
+    background-color: #2e8b57;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #246d43;
+}
+
+.alerta-button {
+    width: 100%;
+    padding: 5px 0;
+    background-color: #d9534f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.alerta-button:hover {
+    background-color: #ac413e;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="menu-box">
+            <h2>Sistema de Controle de Estoque</h2>
+           
+            <div class="menu-grid">
+               
+                <form action="/vizualizar"   method="get" class="menu-item view-btn">
+                    <span class="icon">🔍</span>
+                    <h3>Visualizar Estoque</h3>
+                    <p>Ver o status e os níveis atuais de todos os produtos.</p>
+                    <br>
+                    <button type="submit" class="login-button">Entrar</button>
+                </form>
+               
+                <form action="/cadastrar"   method="get" class="menu-item add-btn">
+                    <span class="icon">➕</span>
+                    <h3>Cadastrar Produto</h3>
+                    <p>Adicionar um novo item ao catálogo de produtos.</p>
+                    <br>
+                    <button type="submit" class="login-button">Entrar</button>
+                </form>
+
+                <form action="/entrada"   method="get" class="menu-item entry-btn">
+                    <span class="icon">📥</span>
+                    <h3>Entrada de Produto</h3>
+                    <p>Registrar a chegada de novos itens (compra/recebimento).</p>
+                    <br>
+                    <button type="submit" class="login-button">Entrar</button>
+                </form>
+
+                <form action="/remover"   method="get" class="menu-item remove-btn">
+                    <span class="icon">📤</span>
+                    <h3>Saída/Remoção</h3>
+                    <p>Registrar a saída, consumo ou venda de itens.</p>
+                    <br>
+                    <button type="submit" class="login-button">Entrar</button>
+                </form>
+               
+                <form action="/alerta"   method="get" class="menu-item alert-btn">
+                    <span class="icon">🚨</span>
+                    <h3>Alertas Críticos</h3>
+                    <p>Visualizar itens abaixo do estoque mínimo.</p>
+                    <br>
+                    <button type="submit" class="alerta-button">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

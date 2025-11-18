@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Estoque</title>
+    <link rel="stylesheet" href="style-visualizar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e8b57;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.data-box {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.data-box h2 {
+    color: #2e8b57;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+thead th {
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #f5fff8;
+}
+
+.action-btn {
+    padding: 6px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #3e8e41;
+}
+
+.stock-low {
+    font-weight: 600;
+    color: #d9534f;
+}
+
+.stock-ok {
+    font-weight: 600;
+    color: #2e8b57;
+}
+    </style>
+</head>
+<body>
+    <div class="data-box">
+        <h2>Estoque Atual</h2>
+        <p id="loading-message" style="text-align: center; font-style: italic;">Carregando dados do estoque...</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Estoque</th>
+                    <th>Estoque Mínimo</th>
+                    <th>Volume (Unidade)</th>
+                    <th>Aplicação</th>
+                </tr>
+            </thead>
+        <tbody id="product-list-body">
+                </tbody>
+        </table>
+    </div>
+
+<script src="script-vizualizar.js"></script>
+</body>
+</html>

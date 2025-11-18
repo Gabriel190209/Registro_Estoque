@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="style-registro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="script-cadastro.js"></script>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e8b57;
+    font-family: 'Poppins', sans-serif;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.cadastro-box {
+    background-color: #ffffff;
+   
+    width: 100%;
+    max-width: 500px;
+    padding: 35px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.cadastro-box h2 {
+    color: #2e8b57;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus, .input-group select:focus {
+    border-color: #2e8b57;
+    outline: none;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px 0;
+   
+    background-color: #2e8b57;
+    color: #ffffff;
+   
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #246d43;
+}
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <form class="cadastro-box" id="formCadastro">
+            <h2>Cadastro de Produto</h2>
+
+            <div class="input-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="input-group">
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca" required>
+            </div>
+
+            <div class="input-group">
+                <label for="volume">Volume:</label>
+                <input type="number" id="volume" name="volume" min="0" step="0.01" required>
+            </div>
+
+            <div class="input-group">
+                <label for="unidadeMedida">Unidade de Medida:</label>
+                <select id="unidadeMedida" name="unidadeMedida" required>
+                    <option value="" disabled selected>Selecione a unidade</option>
+                    <option value="un">Unidade(s)</option>
+                    <option value="kg">Quilograma(s) (kg)</option>
+                    <option value="g">Grama(s) (g)</option>
+                    <option value="l">Litro(s) (L)</option>
+                    <option value="ml">Mililitro(s) (mL)</option>
+                    <option value="m">Metro(s) (m)</option>
+                    <option value="cm">Centímetro(s) (cm)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="tipoEmbalagem">Tipo de Embalagem:</label>
+                <input type="text" id="tipoEmbalagem" name="tipoEmbalagem" required placeholder="Ex: Caixa, Sachê, Rolo">
+            </div>
+
+            <div class="input-group">
+                <label for="aplicacao">Aplicação:</label>
+                <input type="text" id="aplicacao" name="aplicacao" required>
+            </div>
+
+            <div class="input-group">
+                <label for="estoque">Estoque Inicial:</label>
+                <input type="number" id="estoque" name="estoque" min="0" required>
+            </div>
+
+            <div class="input-group">
+                <label for="estoqueMinimo">Estoque Mínimo:</label>
+                <input type="number" id="estoqueMinimo" name="estoqueMinimo" min="0" required>
+            </div>
+
+            <button type="submit" class="submit-button">Adicionar Produto</button>
+        </form>
+    </div>
+
+    <script src="script-cadastro.js"></script>
+</body>
+</html>
